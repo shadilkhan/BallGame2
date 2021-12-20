@@ -21,7 +21,6 @@ increment.addEventListener("click", function () {
         timer = 100;
     }
     levelElement.value = level;
-//     console.log("level", level);
 })
 const decrement = document.getElementById("decrement");
 decrement.addEventListener("click", function () {
@@ -184,55 +183,55 @@ Piece.prototype.lock = function () {
                 Grid[10][c] = VACANT;
                 score+=100;
             }
-            if ((Grid[9][c] === color) && (Grid[10][c] === color) && (Grid[11][c] === color)) {
+            else if ((Grid[9][c] === color) && (Grid[10][c] === color) && (Grid[11][c] === color)) {
                 Grid[9][c] = VACANT;
                 Grid[10][c] = VACANT;
                 Grid[11][c] = VACANT;
                 score+=100;
             }
-            if ((Grid[7][c] === color) && (Grid[8][c] === color) && (Grid[9][c] === color)) {
+            else if ((Grid[7][c] === color) && (Grid[8][c] === color) && (Grid[9][c] === color)) {
                 Grid[7][c] = VACANT;
                 Grid[8][c] = VACANT;
                 Grid[9][c] = VACANT;
                 score+=100;
             }
-            if ((Grid[6][c] === color) && (Grid[7][c] === color) && (Grid[8][c] === color)) {
+            else if ((Grid[6][c] === color) && (Grid[7][c] === color) && (Grid[8][c] === color)) {
                 Grid[6][c] = VACANT;
                 Grid[7][c] = VACANT;
                 Grid[8][c] = VACANT;
                 score+=100;
             } 
-            if ((Grid[5][c] === color) && (Grid[6][c] === color) && (Grid[7][c] === color)) {
+           else if ((Grid[5][c] === color) && (Grid[6][c] === color) && (Grid[7][c] === color)) {
                 Grid[5][c] = VACANT;
                 Grid[6][c] = VACANT;
                 Grid[7][c] = VACANT;
                 score+=100;
             }
-            if ((Grid[4][c] === color) && (Grid[5][c] === color) && (Grid[6][c] === color)) {
+            else if ((Grid[4][c] === color) && (Grid[5][c] === color) && (Grid[6][c] === color)) {
                 Grid[4][c] = VACANT;
                 Grid[5][c] = VACANT;
                 Grid[6][c] = VACANT;
                 score+=100;
             }
-            if ((Grid[3][c] === color) && (Grid[4][c] === color) && (Grid[5][c] === color)) {
+            else if ((Grid[3][c] === color) && (Grid[4][c] === color) && (Grid[5][c] === color)) {
                 Grid[3][c] = VACANT;
                 Grid[4][c] = VACANT;
                 Grid[5][c] = VACANT;
                 score+=100;
             }
-            if ((Grid[2][c] === color) && (Grid[3][c] === color) && (Grid[4][c] === color)) {
+            else if ((Grid[2][c] === color) && (Grid[3][c] === color) && (Grid[4][c] === color)) {
                 Grid[2][c] = VACANT;
                 Grid[3][c] = VACANT;
                 Grid[4][c] = VACANT;
                 score+=100;
             }
-            if ((Grid[1][c] === color) && (Grid[2][c] === color) && (Grid[3][c] === color)) {
+            else if ((Grid[1][c] === color) && (Grid[2][c] === color) && (Grid[3][c] === color)) {
                 Grid[1][c] = VACANT;
                 Grid[2][c] = VACANT;
                 Grid[3][c] = VACANT;
                 score+=100;
             }
-            if ((Grid[0][c] === color) && (Grid[1][c] === color) && (Grid[2][c] === color)) {
+            else if ((Grid[0][c] === color) && (Grid[1][c] === color) && (Grid[2][c] === color)) {
                 Grid[0][c] = VACANT;
                 Grid[1][c] = VACANT;
                 Grid[2][c] = VACANT;
@@ -281,27 +280,31 @@ document.addEventListener("keydown", CONTROL);
 function CONTROL(event) {
     if (event.keyCode == 37) {
         p.moveLeft();
+        p.moveDown();
         dropStart = Date.now();
     } else if (event.keyCode == 38) {
         dropStart = Date.now();
     } else if (event.keyCode == 39) {
         p.moveRight();
+        p.moveDown();
         dropStart = Date.now();
     } else if (event.keyCode == 40) {
         p.moveDown();
     }
 }
-let leftarrow = document.getElementById("leftarrow");
+let leftarrow = document.getElementById("left_arrow");
 leftarrow.addEventListener("click", () => {
     p.moveLeft();
+    p.moveDown();
     dropStart = Date.now();
 });
-let rightarrow = document.getElementById("rightarrow");
+let rightarrow = document.getElementById("right_arrow");
 rightarrow.addEventListener("click", () => {
     p.moveRight();
+    p.moveDown();
     dropStart = Date.now();
 });
-let downarrow = document.getElementById("downarrow");
+let downarrow = document.getElementById("down_arrow");
 downarrow.addEventListener("click", () => {
     p.moveDown();
 });
